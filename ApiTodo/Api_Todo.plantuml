@@ -1,0 +1,16 @@
+@startuml
+class Api_Todo {
+    +int Id
+    +string Task
+    +bool Completed
+    +DateTime? Deadline
+    +int? AgendaId
+}
+
+class Agenda {
+    +int Id
+    +string Name
+}
+
+Api_Todo "1" -->"0..*" Agenda : contains
+@enduml

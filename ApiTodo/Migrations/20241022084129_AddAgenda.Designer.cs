@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiTodo.Migrations
 {
     [DbContext(typeof(Api_TodoContext))]
-    partial class Api_TodoContextModelSnapshot : ModelSnapshot
+    [Migration("20241022084129_AddAgenda")]
+    partial class AddAgenda
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
@@ -47,7 +50,6 @@ namespace ApiTodo.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Task")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -60,7 +62,7 @@ namespace ApiTodo.Migrations
             modelBuilder.Entity("Api_Todo", b =>
                 {
                     b.HasOne("Agenda", "Agenda")
-                        .WithMany("Api_Todos")
+                        .WithMany("Todos")
                         .HasForeignKey("AgendaId");
 
                     b.Navigation("Agenda");
@@ -68,7 +70,7 @@ namespace ApiTodo.Migrations
 
             modelBuilder.Entity("Agenda", b =>
                 {
-                    b.Navigation("Api_Todos");
+                    b.Navigation("Todos");
                 });
 #pragma warning restore 612, 618
         }

@@ -133,3 +133,4 @@ C:\Users\dbenh\TPAPITodo\ApiTodo\obj\Debug\net8.0\refint\ApiTodo.dll
 C:\Users\dbenh\TPAPITodo\ApiTodo\obj\Debug\net8.0\ApiTodo.pdb
 C:\Users\dbenh\TPAPITodo\ApiTodo\obj\Debug\net8.0\ApiTodo.genruntimeconfig.cache
 C:\Users\dbenh\TPAPITodo\ApiTodo\obj\Debug\net8.0\ref\ApiTodo.dll
+C:\Users\dbenh\TPAPITodo\ApiTodo\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll

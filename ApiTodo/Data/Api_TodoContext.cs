@@ -3,9 +3,16 @@ using Microsoft.EntityFrameworkCore;
 public class Api_TodoContext : DbContext
 {
   public DbSet<Api_Todo> Api_Todo { get; set; } = null!;
-
+  //public DbSet<Agenda> Agendas { get; set; }
   public string DbPath { get; private set; }
-
+  // protected override void OnModelCreating(ModelBuilder modelBuilder)
+  // {
+  //   modelBuilder.Entity<Api_Todo>()
+  //       .HasOne(t => t.Agenda)
+  //       .WithMany(a => a.Api_Todos)
+  //       .HasForeignKey(t => t.AgendaId)
+  //       .IsRequired(false);
+  // }
 
   public Api_TodoContext()
   {
